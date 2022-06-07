@@ -13,7 +13,7 @@ int main(void)
 
 	while (ch <= 'z')
 	{
-	printf("%c ", ch);
+	printf("%c", ch);
 	ch++;
 }
 return (0);
