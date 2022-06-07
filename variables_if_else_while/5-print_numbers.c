@@ -14,7 +14,7 @@ int main(void)
 	while (i < 70)
 	{
 		putchar(i);
-		i++
+		i++;
 	}
 	putchar('\n');
 
