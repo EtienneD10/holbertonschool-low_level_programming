@@ -12,7 +12,7 @@ int main(void)
 
 	while (low <= 'z')
 	{
-		putchar(ch_a);
+		putchar(low);
 		low++;
 	}
 	while (up <= 'Z')
