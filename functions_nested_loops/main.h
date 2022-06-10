@@ -26,6 +26,6 @@ void print_alphabet_x10(void);
 /**
  * int_islower()
  */
-int _islower();
+int _islower(int c);
 
 #endif
