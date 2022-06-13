@@ -16,8 +16,7 @@ int main(void)
 	while (i < 10)
 	{
 		/*
-		 * you need to increment i;
-		 * with i++ to make it inifinite;
+		 * i++;
 		 */
 		putchar(i);
 	}
