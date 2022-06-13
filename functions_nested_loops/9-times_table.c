@@ -6,37 +6,37 @@
 
 void times_table(void)
 {
-	int row;
-	int col;
-	int pro;
+int x, y, z, u, d;
 
-	for (row = 0; row <= 9; row++)
+	for (x = 0; x <= 9; x++)
 	{
-		for (col = 0; col <= 0; col++)
+		for (y = 0; y <= 9; y++)
 		{
-			pro = (row * col);
+			z = x * y;
 
-			if (col == 0)
+			if (z > 9)
 			{
-				_putchar('0' + pro);
-			}
-			else if (pro <= 9)
-			{
-				_putchar(',');
-				_putchar(' ');
-				_putchar(' ');
-				_putchar('0' + pro);
-			}
-			else if (pro > 9)
-			{
-				_putchar(',');
-				_putchar(' ');
-				_putchar('0' + (pro / 10));
-				_putchar('0' + (pro % 10));
+				u = z % 10;
+				d = (z - u) / 10;
 
+				_putchar(44);
+				_putchar(32);
+				_putchar(d + '0');
+				_putchar(u + '0');
 			}
+			else
+			{
+				if (y != 0)
+				{
+					_putchar(44);
+					_putchar(32);
+					_putchar(32);
+				}
 
+				_putchar(z + '0');
+			}
 		}
+
 		_putchar('\n');
 	}
 }
