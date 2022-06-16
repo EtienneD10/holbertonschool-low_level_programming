@@ -1,5 +1,13 @@
 #include "main.h"
 
+/**
+ * puts2 - print every other character
+ * @str: char
+ *
+ * Description - partition % 2 the characters.
+ * Return: void
+ */
+
 void puts2(char *str)
 {
 	int i = 0;
