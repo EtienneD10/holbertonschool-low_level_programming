@@ -15,6 +15,9 @@ char *_strdup(char *str)
 	int i, j;
 	char *duplicate;
 
+	if (str == NULL) /*validate str*/
+		return (NULL);
+
 	for (i = 0; str[i]; i++)
 		;
 	duplicate = malloc(i + 1);
