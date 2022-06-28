@@ -2,42 +2,55 @@
 #include "main.h"
 
 /**
- * _strlen - calculate and return string length
- * @string: string
- * Return: string length
+ * string_nconcat - concatenate two strings
+ * @s1: pointer to string1
+ * @s2: pointer to string2
+ * @n: unsigned int to compare
+ *
+ * Description -
+ * Return: pointer
  */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *s;
-	unsigned int i = 0, j = 0, len1 = 0, len2 = 0;
+	unsigned int m = 0, l = 0, i, j;
+	char *t;
 
-	while (s1 && s1[len1])
-		len1++;
-	while (s2 && s2[len2])
-		len2++;
-
-	if (n < len2)
-		s = malloc(sizeof(char) * (len1 + n + 1));
-	else
-		s = malloc(sizeof(char) * (len1 + len2 + 1));
-
-	if (!s)
+	if (s2)
+		m = strlen(s2);
+	if (s1)
+		l = strlen(s1);
+	if (n < m)
+		m = n;
+	t = malloc(m + l + 6);
+	if (t == NULL)
 		return (NULL);
-
-	while (i < len1)
+	if (s1 == NULL && s2 == NULL)
 	{
-		s[i] = s1[i];
-		i++;
+		t[0] = '\0';
+		return (t);
 	}
-
-	while (n < len2 && i < (len1 + n))
-		s[i++] = s2[j++];
-
-	while (n >= len2 && i < (len1 + len2))
-		s[i++] = s2[j++];
-
-	s[i] = '\0';
-
-	return (s);
+	if (s1 == NULL && s2)
+	{
+		for (i = 0; i < m; i++)
+			t[i] = s2[i];
+		t[i] = '\0';
+		return (t);
+	}
+	if (s2 == NULL && s1)
+	{
+		for (i = 0; s1[i] != '\0'; i++)
+			t[i] = s1[i];
+		t[i] = '\0';
+		return (t);
+	}
+	else
+	{
+	for (i = 0; s1[i] != '\0'; i++)
+		t[i] = s1[i];
+	for (j = i; j < (i + m); j++)
+		t[j] = s2[j - i];
+	t[j] = '\0';
+	return (t);
+	}
 }
