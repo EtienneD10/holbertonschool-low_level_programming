@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include "main.h"
-
+#include <string.h>
+#include <stdio.h>
 /**
  * string_nconcat - concatenate two strings
  * @s1: pointer to string1
